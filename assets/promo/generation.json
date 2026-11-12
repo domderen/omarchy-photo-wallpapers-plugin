@@ -1,0 +1,74 @@
+[
+  {
+    "slug": "beach-piggyback",
+    "title": "Carry me home",
+    "style": "subtle",
+    "mode": "light",
+    "sha256": "a288d34005944326af8ae81e8254bea565b47869f0a648c7af36872a854961db",
+    "width": 1586,
+    "height": 992
+  },
+  {
+    "slug": "kitchen-flour",
+    "title": "Sunday helpers",
+    "style": "neutral",
+    "mode": "light",
+    "sha256": "d78dae5b050874cc3eb7d92deb04a0c08fe5f14e7ad6c5436a0c327c56667e9d",
+    "width": 1586,
+    "height": 992
+  },
+  {
+    "slug": "livingroom-dance",
+    "title": "Their favourite song",
+    "style": "neutral",
+    "mode": "dark",
+    "sha256": "37e4db012e39f1465b6d7864cf1540d5ab90e6b1dde74c4d4a82752f60c92d81",
+    "width": 1586,
+    "height": 992
+  },
+  {
+    "slug": "blanket-story",
+    "title": "Just one more page",
+    "style": "subtle",
+    "mode": "dark",
+    "sha256": "5bb002c3d31c0ba5c7e7a3ba23836665a622158708aab1e7f9f7e1d3dfb1d35e",
+    "width": 1586,
+    "height": 992
+  },
+  {
+    "slug": "grandma-garden",
+    "title": "Grandma's little helper",
+    "style": "tinted",
+    "mode": "light",
+    "sha256": "e6577c546bf5eedc78bf53c029817e01480c4a74a41a34f5859e9955672c9a74",
+    "width": 1586,
+    "height": 992
+  },
+  {
+    "slug": "car-window",
+    "title": "The ride home",
+    "style": "tinted",
+    "mode": "dark",
+    "sha256": "cc9d237e0b166bde4fe0a39b35ba6bad268ed5a279ad0e858589823b1ea5f68e",
+    "width": 1586,
+    "height": 992
+  },
+  {
+    "slug": "sofa-tumble",
+    "title": "Five more minutes",
+    "style": "rich",
+    "mode": "light",
+    "sha256": "a6c0f25fe9f8694ebba36bec9e017aeac5b58878f222314edb70d2567c94f3eb",
+    "width": 1586,
+    "height": 992
+  },
+  {
+    "slug": "birthday-wish",
+    "title": "Make a wish",
+    "style": "rich",
+    "mode": "dark",
+    "sha256": "e885de34d920c2f4398368ffd853d5f86d5a604a3041fd449b6438d0c6460ad4",
+    "width": 1586,
+    "height": 992
+  }
+]

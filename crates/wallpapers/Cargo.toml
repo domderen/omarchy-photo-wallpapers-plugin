@@ -1,0 +1,49 @@
+[package]
+name = "omarchy-photo-wallpapers"
+version = "0.5.0"
+edition = "2024"
+rust-version = "1.99"
+publish = false
+
+[dependencies]
+anyhow = "1"
+async-trait = "0.1"
+base64 = "0.22"
+chrono = { version = "0.4", features = ["serde"] }
+clap = { version = "4", features = ["derive"] }
+cookie_store = { version = "=0.22.1", features = ["serde_json"] }
+dirs = "6"
+fs2 = "0.4"
+futures-util = "0.3"
+hex = "0.4"
+image = { version = "=0.25.10", default-features = false, features = ["jpeg", "png", "webp", "tiff"] }
+moxcms = "=0.8.1"
+ort = { version = "=2.0.0-rc.15", default-features = false, features = ["std", "load-dynamic", "api-31"] }
+rustface = { version = "=0.1.7", default-features = false }
+num-bigint = "0.4"
+pbkdf2 = "0.12"
+rand = "0.10"
+reqwest = { version = "0.13", default-features = false, features = ["rustls", "cookies", "json", "stream", "gzip", "query"] }
+reqwest_cookie_store = "=0.10.0"
+rusqlite = { version = "=0.41.1", features = ["bundled", "backup"] }
+rustix = { version = "1.1.6", features = ["fs", "process"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", features = ["float_roundtrip"] }
+sha2 = "0.10"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "net", "io-util", "sync", "time", "signal", "fs", "process"] }
+tokio-util = { version = "0.7", features = ["rt"] }
+uuid = { version = "1", features = ["v4"] }
+zeroize = { version = "1", features = ["derive"] }
+sunrise = "=3.0.0"
+
+[dev-dependencies]
+tempfile = "3"
+wiremock = "0.6"
+
+[[bin]]
+name = "omarchy-photo-wallpapers"
+path = "src/main.rs"
+
+[target.'cfg(target_os = "linux")'.dependencies]
+rustix = { version = "1.1.6", features = ["time"] }
+libheif-rs = { version = "=3.0.0", default-features = false, features = ["v1_21"] }

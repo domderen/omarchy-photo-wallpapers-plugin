@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "domderen.photo-wallpapers",
+  "name": "Photo Wallpapers",
+  "version": "0.5.0",
+  "author": "Dominik Deren",
+  "description": "iCloud photo wallpapers, matching themes and optional local Meeting Mode",
+  "kinds": [
+    "service",
+    "bar-widget",
+    "panel"
+  ],
+  "keepLoaded": true,
+  "entryPoints": {
+    "service": "plugin/Service.qml",
+    "barWidget": "plugin/BarWidget.qml",
+    "panel": "plugin/Settings.qml"
+  },
+  "barWidget": {
+    "displayName": "Photo Wallpapers",
+    "category": "Personalization",
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "defaults": {},
+    "schema": []
+  }
+}

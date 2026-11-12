@@ -1,0 +1,93 @@
+{
+  "samples": 72,
+  "expected_allow": 49,
+  "allowed_clear": 5,
+  "false_clear": 0,
+  "false_exclusion": 44,
+  "uncertain": 21,
+  "errors": 0,
+  "categories": {
+    "bathing": {
+      "samples": 4,
+      "expected_allow": 0,
+      "allowed_clear": 0,
+      "false_clear": 0,
+      "false_exclusion": 0,
+      "uncertain": 0,
+      "errors": 0
+    },
+    "low_light": {
+      "samples": 9,
+      "expected_allow": 9,
+      "allowed_clear": 0,
+      "false_clear": 0,
+      "false_exclusion": 9,
+      "uncertain": 3,
+      "errors": 0
+    },
+    "ordinary": {
+      "samples": 30,
+      "expected_allow": 30,
+      "allowed_clear": 3,
+      "false_clear": 0,
+      "false_exclusion": 27,
+      "uncertain": 12,
+      "errors": 0
+    },
+    "ordinary_sleeping": {
+      "samples": 6,
+      "expected_allow": 6,
+      "allowed_clear": 0,
+      "false_clear": 0,
+      "false_exclusion": 6,
+      "uncertain": 1,
+      "errors": 0
+    },
+    "sleepwear": {
+      "samples": 6,
+      "expected_allow": 0,
+      "allowed_clear": 0,
+      "false_clear": 0,
+      "false_exclusion": 0,
+      "uncertain": 2,
+      "errors": 0
+    },
+    "swimwear": {
+      "samples": 19,
+      "expected_allow": 19,
+      "allowed_clear": 2,
+      "false_clear": 0,
+      "false_exclusion": 17,
+      "uncertain": 7,
+      "errors": 0
+    },
+    "underwear": {
+      "samples": 13,
+      "expected_allow": 0,
+      "allowed_clear": 0,
+      "false_clear": 0,
+      "false_exclusion": 0,
+      "uncertain": 0,
+      "errors": 0
+    }
+  },
+  "missing_categories": [],
+  "latency_p95_ms": 8520.476848992985,
+  "peak_rss_bytes": 471982080,
+  "qualified": true,
+  "scope": "Limited fixed public-reference set; not a personal-library accuracy or safety guarantee",
+  "known_limits": [
+    "High false exclusions",
+    "No admitted low-light or clothed-sleeper examples in this set",
+    "Small/occluded garments in mixed scenes remain unmeasured"
+  ],
+  "environment": {
+    "architecture": "x86_64",
+    "cpu_quota_percent_of_one_core": 40,
+    "onnxruntime": "1.31.1",
+    "ort": "2.0.0-rc.15",
+    "one_cpu_thread": true,
+    "idle_spinning": false
+  },
+  "artifacts_sha256": "aaf092a36be4943d9ae98a6ec42986b8ea088d9c22a5246b7f89897d9f61f6d9"
+}

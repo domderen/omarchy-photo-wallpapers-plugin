@@ -1,0 +1,68 @@
+#!/usr/bin/env python3
+"""Export an allowlisted, tracked source tree without private development history."""
+import argparse
+import hashlib
+import json
+import os
+from pathlib import Path
+import shutil
+import subprocess
+import tempfile
+
+FILES = {'Cargo.toml','Cargo.lock','manifest.json','LICENSE','NOTICE.md','SECURITY.md','.gitignore','rust-toolchain.toml','preview.webp','.gitattributes','.python-version'}
+PREFIXES = ('crates/wallpapers/src/','crates/wallpapers/tests/','crates/wallpapers/assets/','plugin/','third_party/','src/photo_wallpapers/bridge/','src/photo_wallpapers/catalog/','tests/bridge/','tests/catalog/','tests/qml/','tests/release/','.github/workflows/','assets/promo/')
+EXTRA = {'crates/wallpapers/Cargo.toml','crates/wallpapers/examples/promo_prepare.rs','src/photo_wallpapers/__init__.py','src/photo_wallpapers/io.py','src/photo_wallpapers/imaging/color.py','tests/conftest.py','tests/__init__.py','tests/plugin/test_plugin_contract.py','tests/test_io.py','scripts/test-qml','scripts/export-release','scripts/package-release','scripts/collect-licenses','scripts/install-omarchy','scripts/uninstall-omarchy','scripts/install-mac-helper','scripts/uninstall-mac-helper','scripts/compose-promo'}
+
+
+def export(source, output):
+    source=source.resolve(); output=Path(os.path.abspath(output))
+    if output.exists() or output.is_symlink(): raise ValueError('destination_exists')
+    if output==source or source.is_relative_to(output): raise ValueError('unsafe_destination')
+    tracked=subprocess.check_output(['git','-C',str(source),'ls-files','-z']).decode().split('\0')
+    public_docs=(source/'docs/public').is_dir()
+    helper=(source/'packaging/mac-helper/pyproject.toml').is_file()
+    selected={}
+    for name in sorted(filter(None,tracked)):
+        path=Path(name)
+        if path.is_absolute() or '..' in path.parts: raise ValueError('unsafe_source_path')
+        target=None
+        if name in FILES or name in EXTRA or name.startswith(PREFIXES): target=name
+        if name.startswith('docs/public/'): target='README.md' if name=='docs/public/README.md' else 'docs/'+name.removeprefix('docs/public/')
+        if not public_docs and (name=='README.md' or name.startswith('docs/') and not name.startswith('docs/superpowers/') and name!='docs/IMPLEMENTATION_STATUS.md'): target=name
+        if name in ('pyproject.toml','uv.lock') and not helper: target=name
+        if name.startswith('packaging/mac-helper/') and Path(name).name in ('pyproject.toml','uv.lock'): target=Path(name).name
+        if target is None: continue
+        original=source/name
+        if original.is_symlink() or any(p.is_symlink() for p in original.parents if p!=source and p.is_relative_to(source)): raise ValueError('symlink_forbidden')
+        if not original.is_file(): raise ValueError('tracked_source_missing')
+        selected[target]=original
+    for required in ('Cargo.toml','Cargo.lock','manifest.json','LICENSE','README.md'):
+        if required not in selected: raise ValueError('required_release_file_missing')
+    manifest=json.loads(selected['manifest.json'].read_text())
+    for entry in manifest['entryPoints'].values():
+        if not isinstance(entry,str) or Path(entry).is_absolute() or '..' in Path(entry).parts or entry not in selected: raise ValueError('missing_or_unsafe_entrypoint')
+    output.parent.mkdir(parents=True,exist_ok=True)
+    temporary=Path(tempfile.mkdtemp(prefix='.release-export-',dir=output.parent))
+    try:
+        hashes={}
+        for target, original in sorted(selected.items()):
+            dest=temporary/target; dest.parent.mkdir(parents=True,exist_ok=True)
+            shutil.copyfile(original,dest)
+            dest.chmod(0o755 if os.access(original,os.X_OK) else 0o644)
+            hashes[target]=hashlib.sha256(dest.read_bytes()).hexdigest()
+        commit=subprocess.run(['git','-C',str(source),'rev-parse','HEAD'],capture_output=True,text=True)
+        record={'plugin_id':manifest['id'],'plugin_version':manifest['version'],'development_commit':commit.stdout.strip() if commit.returncode==0 else None,'files':[{'path':name,'sha256':digest} for name,digest in sorted(hashes.items())],'history_exported':False}
+        (temporary/'release-source.json').write_text(json.dumps(record,indent=2,sort_keys=True)+'\n')
+        if output.exists() or output.is_symlink(): raise ValueError('destination_exists')
+        temporary.rename(output)
+    except BaseException:
+        shutil.rmtree(temporary,ignore_errors=True)
+        raise
+    return {'exported':True,'files':len(selected),'version':manifest['version']}
+
+if __name__=='__main__':
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--source',type=Path,default=Path(__file__).resolve().parents[1]); parser.add_argument('--output',type=Path,required=True)
+    args=parser.parse_args()
+    try: print(json.dumps(export(args.source,args.output)))
+    except (ValueError,OSError,subprocess.CalledProcessError) as error: parser.exit(1,'export_error: '+str(error)+'\n')

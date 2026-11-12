@@ -1,0 +1,36 @@
+#!/usr/bin/env python3
+"""Package an already tested Arch x86_64 backend without running an installer."""
+import argparse,gzip,hashlib,json,os,platform,re,subprocess,tarfile,tempfile,shutil
+from pathlib import Path
+p=argparse.ArgumentParser(description=__doc__);p.add_argument('--binary',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--source-commit');args=p.parse_args()
+if args.source_commit is not None and re.fullmatch(r'[0-9a-f]{40}',args.source_commit) is None:p.exit(1,'invalid_source_commit\n')
+root=Path(__file__).resolve().parents[1];manifest=json.loads((root/'manifest.json').read_text());version=manifest['version']
+if platform.system()!='Linux' or platform.machine()!='x86_64':p.exit(1,'supported_release_target_is_Arch_x86_64\n')
+if args.output.exists():p.exit(1,'artifact_destination_exists\n')
+args.binary=args.binary.resolve()
+if subprocess.check_output([str(args.binary),'--version'],text=True).strip()!=f'omarchy-photo-wallpapers {version}':p.exit(1,'binary_version_mismatch\n')
+ldd=subprocess.check_output(['ldd',str(args.binary)],text=True)
+if 'not found' in ldd:p.exit(1,'missing_runtime_dependency\n')
+identity=args.source_commit or subprocess.check_output(['git','rev-parse','HEAD'],cwd=root,text=True).strip()
+epoch=int(os.environ.get('SOURCE_DATE_EPOCH') or subprocess.check_output(['git','show','-s','--format=%ct','HEAD'],cwd=root,text=True).strip())
+if not 0<=epoch<=4294967295:p.exit(1,'invalid_source_epoch\n')
+args.output.mkdir(parents=True)
+name=f'omarchy-photo-wallpapers-{version}-arch-x86_64';archive=args.output/(name+'.tar.gz')
+with tempfile.TemporaryDirectory() as directory:
+ stage=Path(directory)/name;stage.mkdir();shutil.copyfile(args.binary,stage/'omarchy-photo-wallpapers');(stage/'omarchy-photo-wallpapers').chmod(0o755)
+ for item in ['LICENSE','NOTICE.md','SECURITY.md','third_party']:
+  src=root/item
+  if src.is_dir():shutil.copytree(src,stage/item)
+  else:shutil.copyfile(src,stage/item)
+ (stage/'INSTALL.txt').write_text('Photo Wallpapers '+version+'\n\nRequires current Arch x86_64/Omarchy Quattro, system libheif >=1.23.7 and systemd user session.\nInstall the Git-managed plugin first as documented in its README.\nThen, from this verified extracted directory, run:\n  ./omarchy-photo-wallpapers install --backend-only\nThis installs a user binary/service and does not change the plugin checkout.\nUpdate: explicitly end Meeting Mode and disable the Personal filter first; review/check the new archive, then repeat the command.\nVersion 0.5 uses database schema 3. Never run an older backend against that database.\nEnd protection before removing/disabling the plugin or backend.\nRemove backend: omarchy-photo-wallpapers uninstall\nPurge private state only when intended: omarchy-photo-wallpapers uninstall --purge\nRemove plugin separately: omarchy plugin remove domderen.photo-wallpapers\n')
+ build={'version':version,'protocol_version':1,'storage_schema_version':3,'optional_screening_runtime':'ONNX Runtime 1.31.1 (separate verified download)','source_commit':identity,'target':'x86_64-unknown-linux-gnu','supported_distribution':'Arch Linux / Omarchy Quattro','rustc':subprocess.check_output(['rustc','--version'],text=True).strip(),'libheif':subprocess.check_output(['pkg-config','--modversion','libheif'],text=True).strip(),'libc':subprocess.check_output(['getconf','GNU_LIBC_VERSION'],text=True).strip(),'dynamic_libraries':sorted({line.strip().split()[0] for line in ldd.splitlines() if line.strip() and not line.strip().startswith('/') }),'binary_sha256':hashlib.sha256(args.binary.read_bytes()).hexdigest(),'source_date_epoch':epoch}
+ (stage/'BUILD.json').write_text(json.dumps(build,indent=2)+'\n')
+ with archive.open('wb') as raw,gzip.GzipFile(filename='',mode='wb',fileobj=raw,mtime=epoch) as gz,tarfile.open(fileobj=gz,mode='w') as tar:
+  for file in sorted(stage.rglob('*')):
+   info=tar.gettarinfo(str(file),arcname=str(Path(name)/file.relative_to(stage)));info.uid=info.gid=0;info.uname=info.gname='';info.mtime=epoch
+   if file.is_file():
+    with file.open('rb') as content:tar.addfile(info,content)
+   else:tar.addfile(info)
+ shutil.copyfile(stage/'BUILD.json',args.output/'BUILD.json')
+sha=hashlib.sha256(archive.read_bytes()).hexdigest();(args.output/'SHA256SUMS').write_text(sha+'  '+archive.name+'\n')
+print(json.dumps({'archive':archive.name,'sha256':sha,'source_commit':identity}))

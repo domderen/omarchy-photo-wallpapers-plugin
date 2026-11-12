@@ -1,0 +1,5 @@
+#!/bin/sh
+set -eu
+cd "$(dirname "$0")/.."
+uv sync --extra bridge --frozen
+exec .venv/bin/photo-bridge install "$@"

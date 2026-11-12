@@ -1,0 +1,5 @@
+# Preserve upstream license texts byte-for-byte, including their whitespace.
+third_party/rust/** -whitespace
+
+# Retain the upstream library notice byte-for-byte, including its whitespace.
+third_party/rust-stdlib/COPYRIGHT-library.html -whitespace

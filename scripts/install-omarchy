@@ -1,0 +1,17 @@
+#!/bin/sh
+set -eu
+cd "$(dirname "$0")/.."
+if ! command -v cargo >/dev/null 2>&1; then
+  echo "Install Rust 1.99 or newer to build the Omarchy application." >&2
+  exit 1
+fi
+if ! pkg-config --atleast-version=1.23.7 libheif; then
+  echo "Install libheif >=1.23.7 (security fixes) and pkg-config before building." >&2
+  exit 1
+fi
+if ! command -v matugen >/dev/null 2>&1; then
+  echo "Wallpaper colour matching needs Matugen 4.x (Arch: sudo pacman -S matugen). Installation can continue with matching disabled." >&2
+fi
+build_dir="${CARGO_TARGET_DIR:-${XDG_CACHE_HOME:-$HOME/.cache}/omarchy-photo-wallpapers/build}"
+CARGO_TARGET_DIR="$build_dir" CARGO_BUILD_JOBS="${CARGO_BUILD_JOBS:-2}" cargo build --locked --release --bin omarchy-photo-wallpapers
+exec "$build_dir/release/omarchy-photo-wallpapers" install "$@"

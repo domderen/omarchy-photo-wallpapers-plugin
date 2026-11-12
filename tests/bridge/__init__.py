@@ -1,0 +1,1 @@
+"""Optional bridge fixture checks."""

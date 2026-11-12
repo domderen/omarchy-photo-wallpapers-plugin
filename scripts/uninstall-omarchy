@@ -1,0 +1,7 @@
+#!/bin/sh
+set -eu
+cd "$(dirname "$0")/.."
+if [ -x target/release/omarchy-photo-wallpapers ]; then
+  exec target/release/omarchy-photo-wallpapers uninstall "$@"
+fi
+exec omarchy-photo-wallpapers uninstall "$@"

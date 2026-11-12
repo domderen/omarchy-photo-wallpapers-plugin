@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling==1.30.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "omarchy-photo-wallpapers"
+version = "0.1.0"
+description = "Optional read-only Apple Photos metadata helper"
+requires-python = ">=3.13.18,<3.14"
+dependencies = ["pillow==13.0.0", "httpx==0.28.1"]
+
+[project.optional-dependencies]
+bridge = ["osxphotos==0.77.2; sys_platform == 'darwin'", "pillow-heif==1.8.1; sys_platform == 'darwin'", "fastapi==0.153.0", "uvicorn==0.54.0"]
+dev = ["ruff==0.17.1", "pytest==9.1.1", "fastapi==0.153.0", "uvicorn==0.54.0"]
+
+[project.scripts]
+photo-bridge = "photo_wallpapers.bridge.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/photo_wallpapers"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

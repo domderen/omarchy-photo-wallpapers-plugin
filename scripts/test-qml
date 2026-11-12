@@ -1,0 +1,99 @@
+#!/usr/bin/env python3
+"""Run behavioral QML checks in Quickshell, which embeds its static plugins."""
+
+import os
+import shutil
+import struct
+import subprocess
+import sys
+import tempfile
+import zlib
+from pathlib import Path
+
+repo = Path(__file__).resolve().parents[1]
+shell = Path(os.environ.get("OMARCHY_PATH", "/usr/share/omarchy")) / "shell"
+(repo / ".local").mkdir(exist_ok=True)
+with tempfile.TemporaryDirectory(prefix="qml-check-", dir=repo / ".local") as temporary:
+    root = Path(temporary)
+    for name in ("Ui", "Commons"):
+        (root / name).symlink_to(shell / name, target_is_directory=True)
+    shutil.copytree(repo / "plugin", root / "plugin")
+    fixture = root / "neutral.png"
+
+    def png_chunk(name, data):
+        return (
+            struct.pack(">I", len(data))
+            + name
+            + data
+            + struct.pack(">I", zlib.crc32(name + data))
+        )
+
+    fixture.write_bytes(
+        b"\x89PNG\r\n\x1a\n"
+        + png_chunk(b"IHDR", struct.pack(">IIBBBBB", 1, 1, 8, 2, 0, 0, 0))
+        + png_chunk(b"IDAT", zlib.compress(b"\x00\x1e\x25\x2d"))
+        + png_chunk(b"IEND", b"")
+    )
+    env = os.environ | {
+        "QT_QPA_PLATFORM": "offscreen",
+        "PHOTO_WALLPAPERS_PRIVACY_STATE": str(root / "absent-state.json"),
+        "PHOTO_WALLPAPERS_QML_FIXTURE": str(fixture),
+    }
+    names = [
+        "interval-shell.qml",
+        "shared-engine-shell.qml",
+        "auth-shell.qml",
+        "status-shell.qml",
+        "source-selection-shell.qml",
+        "theme-editor-shell.qml",
+        "privacy-editor-shell.qml",
+        "privacy-preview-shell.qml",
+    ]
+    if os.environ.get("WAYLAND_DISPLAY"):
+        names += [
+            "shared-settings-shell.qml",
+            "theme-settings-shell.qml",
+            "privacy-settings-shell.qml",
+            "meeting-shell.qml",
+            "privacy-shadow-shell.qml",
+        ]
+    for name in names:
+        (root / "shell.qml").write_text(
+            (repo / "tests/qml" / name)
+            .read_text()
+            .replace("../../plugin/components", "plugin/components")
+        )
+        env["PHOTO_WALLPAPERS_PRIVACY_STATE"] = str(root / "absent-state.json")
+        if name == "privacy-shadow-shell.qml":
+            state = root / "startup-state.json"
+            state.write_text('{"schema_version":1,"protected":true,"meeting":true}')
+            env["PHOTO_WALLPAPERS_PRIVACY_STATE"] = str(state)
+        env["QT_QPA_PLATFORM"] = (
+            "wayland"
+            if name
+            in (
+                "shared-settings-shell.qml",
+                "theme-settings-shell.qml",
+                "privacy-settings-shell.qml",
+                "meeting-shell.qml",
+                "privacy-shadow-shell.qml",
+            )
+            else "offscreen"
+        )
+        result = subprocess.run(
+            ["quickshell", "-p", str(root / "shell.qml")],
+            capture_output=True,
+            text=True,
+            env=env,
+            timeout=30,
+            check=False,
+        )
+        output = result.stdout + result.stderr
+        success = (
+            result.returncode == 0
+            and "PHOTO_WALLPAPERS_QML_CHECKS_PASS" in output
+            and "PHOTO_WALLPAPERS_QML_CHECKS_FAIL" not in output
+        )
+        print(f"Native QML {name} checks passed" if success else output)
+        if not success:
+            sys.exit(1)

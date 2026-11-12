@@ -1,0 +1,26 @@
+#!/usr/bin/env python3
+"""Collect license texts from the exact locally resolved Cargo packages."""
+import argparse,json,subprocess,shutil,re
+from pathlib import Path
+p=argparse.ArgumentParser(description=__doc__);p.add_argument('--output',type=Path,required=True);args=p.parse_args()
+if args.output.exists():p.exit(1,'license_destination_exists\n')
+metadata=json.loads(subprocess.check_output(['cargo','metadata','--locked','--format-version','1'],text=True))
+args.output.mkdir(parents=True)
+tree=subprocess.check_output(['cargo','tree','--locked','--target','x86_64-unknown-linux-gnu','--edges','normal,build','--prefix','none','--format','{p}'],text=True)
+linked={tuple(m.groups()) for line in tree.splitlines() if (m:=re.match(r'([\w-]+) v([^ ]+)',line))}
+entries=[];missing=[]
+for package in sorted(metadata['packages'],key=lambda v:(v['name'],v['version'])):
+ if package.get('source') is None:continue
+ root=Path(package['manifest_path']).parent;dest=args.output/(package['name']+'-'+package['version'])
+ candidates=[f for f in root.iterdir() if f.is_file() and f.name.upper().startswith(('LICENSE','LICENCE','COPYING','COPYRIGHT','UNLICENSE','NOTICE'))]
+ if package.get('license_file'):
+  file=root/package['license_file']
+  if file.is_file() and file not in candidates:candidates.append(file)
+ entry={k:package.get(k) for k in ['name','version','license','repository']};entry['linux_distribution']=(package['name'],package['version']) in linked;entry['texts']=[]
+ for file in candidates:
+  if file.is_symlink():continue
+  dest.mkdir(exist_ok=True);shutil.copyfile(file,dest/file.name);entry['texts'].append(str((dest/file.name).relative_to(args.output)))
+ if not entry['texts'] and entry['linux_distribution']:missing.append(package['name']+'-'+package['version'])
+ entries.append(entry)
+(args.output/'inventory.json').write_text(json.dumps({'packages':entries,'missing_license_texts':missing},indent=2)+'\n')
+print(json.dumps({'packages':len(entries),'missing':missing}))

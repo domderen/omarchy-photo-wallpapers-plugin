@@ -1,0 +1,28 @@
+#!/usr/bin/env python3
+"""Place genuine demo captures into the generated device scene, preserving aspect ratio."""
+import argparse,hashlib,json
+from pathlib import Path
+from PIL import Image,ImageDraw,ImageFont,ImageOps
+p=argparse.ArgumentParser(description=__doc__);p.add_argument('--font',type=Path);args=p.parse_args()
+root=Path(__file__).resolve().parents[1];assets=root/'assets/promo'
+fonts=[args.font,Path('/System/Library/Fonts/Avenir Next.ttc'),Path('/System/Library/Fonts/Supplemental/Avenir Next.ttc'),Path('/usr/share/fonts/TTF/DejaVuSans.ttf'),Path('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf')]
+font=next((f for f in fonts if f and f.is_file()),None)
+if font is None:p.exit(1,'supply_a_local_font_with_--font\n')
+def face(size):return ImageFont.truetype(str(font),size)
+def centered(draw,y,text,size,color):
+ f=face(size);box=draw.textbbox((0,0),text,font=f);draw.text(((1586-(box[2]-box[0]))/2,y),text,font=f,fill=color)
+records=json.loads((assets/'captures.json').read_text());base=Image.open(assets/'macbook-scene.jpg').convert('RGB');assert base.size==(1586,992)
+examples=assets/'examples';examples.mkdir(exist_ok=True);generated=[]
+for record in records:
+ slug=record['slug'];capture=assets/'screens'/(slug+'.png');screen=Image.open(capture).convert('RGB');assert screen.size==tuple(record['display_size'])
+ canvas=base.copy();draw=ImageDraw.Draw(canvas)
+ box=(341,158,1246,680);draw.rectangle(box,fill=(7,7,8));fitted=ImageOps.contain(screen,(box[2]-box[0],box[3]-box[1]),Image.Resampling.LANCZOS)
+ at=(box[0]+((box[2]-box[0])-fitted.width)//2,box[1]+((box[3]-box[1])-fitted.height)//2);canvas.paste(fitted,at)
+ centered(draw,35,'Photo Wallpapers',38,(32,35,39));centered(draw,92,record['style'].title()+' · '+record['mode'].title()+'  /  colours from the photograph',19,(82,85,88))
+ centered(draw,951,'AI-generated family photography · Real Omarchy capture · Illustrative MacBook composite',13,(77,78,80))
+ dest=examples/(slug+'.jpg');canvas.save(dest,quality=94,subsampling=0)
+ generated.append({'path':str(dest.relative_to(root)),'sha256':hashlib.sha256(dest.read_bytes()).hexdigest(),'source_capture':str(capture.relative_to(root)),'capture_sha256':hashlib.sha256(capture.read_bytes()).hexdigest(),'screen_box':list(box),'screen_insert_size':list(fitted.size),'screen_insert_position':list(at),'capture_resampling':'aspect-preserving Lanczos','font_sha256':hashlib.sha256(font.read_bytes()).hexdigest()})
+ if slug=='coastal-subtle-light':
+  hero=canvas.copy();d=ImageDraw.Draw(hero);d.rectangle((0,24,1586,130),fill=(244,243,239));centered(d,34,'Your photos. Your colours.',38,(32,35,39));centered(d,91,'Photo Wallpapers for Omarchy',19,(82,85,88));hero.save(assets/'hero.jpg',quality=94,subsampling=0);hero.save(root/'preview.webp',quality=92)
+(assets/'composition.json').write_text(json.dumps(generated,indent=2)+'\n')
+print(json.dumps({'examples':len(generated),'hero':True,'preview':True,'generated_ui':False}))

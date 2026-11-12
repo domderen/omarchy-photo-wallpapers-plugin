@@ -1,0 +1,88 @@
+name: Release checks
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  linux:
+    runs-on: ubuntu-24.04
+    container: archlinux@sha256:624bdc7fc6615155d67bc34cf7146c0c9fd0e3c92943977da63a630e4ca49c30
+    env:
+      CARGO_HOME: /home/photo-ci/.cargo
+    steps:
+      - name: Install signed packages from the fixed Arch snapshot
+        run: |
+          printf 'Server = https://archive.archlinux.org/repos/2026/10/29/$repo/os/$arch\n' > /etc/pacman.d/mirrorlist
+          pacman -Syu --noconfirm rust libheif pkgconf git python uv
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install the pinned uv with current Python download metadata
+        uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          version: "0.13.6"
+          python-version: "3.13.18"
+          enable-cache: false
+          download-from-astral-mirror: false
+      - name: Export only public source
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          python scripts/export-release --output /tmp/photo-wallpapers-release
+          useradd --create-home --shell /bin/bash photo-ci
+          chown -R photo-ci:photo-ci /tmp/photo-wallpapers-release
+      - name: Rust checks and release
+        working-directory: /tmp/photo-wallpapers-release
+        run: |
+          runuser -u photo-ci -- bash -e <<'CHECKS'
+          export RUSTFLAGS="--remap-path-prefix=$PWD=/src --remap-path-prefix=${CARGO_HOME:-/root/.cargo}=/cargo"
+          rustc --version
+          pkg-config --atleast-version=1.23.7 libheif
+          pkg-config --modversion libheif
+          cargo fmt --check
+          cargo test --locked --workspace
+          cargo clippy --locked --workspace --all-targets -- -D warnings
+          cargo build --locked --release
+          PACKAGE_TEST_BINARY="$PWD/target/release/omarchy-photo-wallpapers" python -m unittest tests.release.test_package -v
+          CHECKS
+      - name: Audit locked Rust dependencies against current advisories
+        working-directory: /tmp/photo-wallpapers-release
+        run: |
+          runuser -u photo-ci -- bash -e <<'AUDIT'
+          cargo install cargo-audit --version 0.22.2 --locked --root /tmp/photo-security-tools
+          /tmp/photo-security-tools/bin/cargo-audit audit --file Cargo.lock
+          AUDIT
+      - name: Optional helper and export fixtures
+        working-directory: /tmp/photo-wallpapers-release
+        run: uv run --frozen --extra dev pytest -q --tb=short
+      - name: Record release artifacts without publishing
+        working-directory: /tmp/photo-wallpapers-release
+        run: |
+          export SOURCE_DATE_EPOCH="$(git -C "$GITHUB_WORKSPACE" show -s --format=%ct "$GITHUB_SHA")"
+          scripts/package-release --source-commit "$GITHUB_SHA" --binary target/release/omarchy-photo-wallpapers --output /tmp/photo-wallpapers-artifacts
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: arch-x86_64-backend
+          path: /tmp/photo-wallpapers-artifacts
+          retention-days: 7
+  mac-helper:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install the pinned uv with current Python download metadata
+        uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
+        with:
+          version: "0.13.6"
+          python-version: "3.13.18"
+          enable-cache: false
+          download-from-astral-mirror: false
+      - name: Export and test the optional helper
+        run: |
+          python3 scripts/export-release --output "$RUNNER_TEMP/photo-wallpapers-release"
+          cd "$RUNNER_TEMP/photo-wallpapers-release"
+          uv run --frozen --extra bridge --extra dev pytest tests/bridge tests/catalog tests/test_io.py -q --tb=short
+          uv export --frozen --extra bridge --no-dev --no-emit-project --output-file "$RUNNER_TEMP/photo-helper-requirements.txt"
+          uvx --python 3.13.18 --from pip-audit==2.10.1 pip-audit --disable-pip --require-hashes -r "$RUNNER_TEMP/photo-helper-requirements.txt"

@@ -1,0 +1,758 @@
+[
+  {
+    "slug": "beach-piggyback",
+    "title": "Carry me home",
+    "style": "subtle",
+    "mode": "light",
+    "view": "desktop",
+    "file": "beach-piggyback-desktop.png",
+    "display_size": [
+      1920,
+      1200
+    ],
+    "logical_scale": 1.25,
+    "sha256": "6598ccebb848ce2af27af708c147ae5702673beebafcd1de9167c2a81c0ddb2e",
+    "apps": [],
+    "fictional_media": true,
+    "demo_network_disabled": true,
+    "analysis_jobs": 0,
+    "generator": "matugen 4.2.0",
+    "native_plugin_component_unmodified": false,
+    "id": "beach-piggyback-desktop-a",
+    "variant": "a",
+    "device": "studio-silver",
+    "device_title": "Silver \u00b7 straight on",
+    "composite": "hero.jpg",
+    "composite_sha256": "65048afffcf50bec03fed1fa0f11302c504d118e8c4a69d900d83e355ffb9007",
+    "source_capture": "screens/beach-piggyback-desktop.png",
+    "device_sha256": "5222e9b6c967820f39bf1c992116721eeb263a42a351c1a7341fd169111be5a1",
+    "screen_quad": [
+      [
+        291,
+        129
+      ],
+      [
+        1159,
+        102
+      ],
+      [
+        1185,
+        613
+      ],
+      [
+        312,
+        654
+      ]
+    ],
+    "mapping": "complete uncropped capture; 2x projective bicubic then Lanczos reduction; no generative UI edits",
+    "capture_campaign": "2026-10-30"
+  },
+  {
+    "slug": "kitchen-flour",
+    "title": "Sunday helpers",
+    "style": "neutral",
+    "mode": "light",
+    "plugin_version": "0.5.0",
+    "source_commit": "13b2715",
+    "view": "plugin-overview",
+    "file": "kitchen-flour-plugin-overview.png",
+    "display_size": [
+      1920,
+      1200
+    ],
+    "logical_scale": 1.25,
+    "sha256": "559712d77cd4476f1955a2f5fcce08638ab443ad9886d54ccf3c42a46dbe0092",
+    "apps": [
+      {
+        "app": "Photo Wallpapers native settings",
+        "view": "overview"
+      }
+    ],
+    "fictional_media": true,
+    "demo_network_disabled": true,
+    "analysis_jobs": 0,
+    "generator": "matugen 4.2.0",
+    "native_plugin_component_unmodified": true,
+    "source_capture": "screens/kitchen-flour-plugin-overview.png",
+    "capture_date": "2026-11-01",
+    "id": "kitchen-flour-plugin-overview-b",
+    "variant": "b",
+    "device": "studio-silver",
+    "device_title": "Silver \u00b7 straight on",
+    "composite": "examples/kitchen-flour-plugin-overview-b-studio-silver.jpg",
+    "device_sha256": "5222e9b6c967820f39bf1c992116721eeb263a42a351c1a7341fd169111be5a1",
+    "screen_quad": [
+      [
+        291,
+        129
+      ],
+      [
+        1159,
+        102
+      ],
+      [
+        1185,
+        613
+      ],
+      [
+        312,
+        654
+      ]
+    ],
+    "mapping": "complete uncropped capture; 2x projective bicubic then Lanczos reduction; no generative UI edits",
+    "composite_sha256": "6151efa0769b85c058d5965f535ae8df20b12ed1c6a9bb6eb46a05410e533a36"
+  },
+  {
+    "slug": "livingroom-dance",
+    "title": "Their favourite song",
+    "style": "neutral",
+    "mode": "dark",
+    "plugin_version": "0.5.0",
+    "source_commit": "13b2715",
+    "view": "plugin-overview",
+    "file": "livingroom-dance-plugin-overview.png",
+    "display_size": [
+      1920,
+      1200
+    ],
+    "logical_scale": 1.25,
+    "sha256": "e676044bfb318c2d9863ba807e7dcd53e02afb9538fc235609080e3647217ada",
+    "apps": [
+      {
+        "app": "Photo Wallpapers native settings",
+        "view": "overview"
+      }
+    ],
+    "fictional_media": true,
+    "demo_network_disabled": true,
+    "analysis_jobs": 0,
+    "generator": "matugen 4.2.0",
+    "native_plugin_component_unmodified": true,
+    "source_capture": "screens/livingroom-dance-plugin-overview.png",
+    "capture_date": "2026-11-01",
+    "id": "livingroom-dance-plugin-overview-b",
+    "variant": "b",
+    "device": "studio-graphite",
+    "device_title": "Graphite \u00b7 elevated",
+    "composite": "examples/livingroom-dance-plugin-overview-b-studio-graphite.jpg",
+    "device_sha256": "23be8c98cf2e38ad695ddf07380c963273a67c1318c397da1688078df9eb9412",
+    "screen_quad": [
+      [
+        251,
+        122
+      ],
+      [
+        1026,
+        81
+      ],
+      [
+        1109,
+        555
+      ],
+      [
+        303,
+        633
+      ]
+    ],
+    "mapping": "complete uncropped capture; 2x projective bicubic then Lanczos reduction; no generative UI edits",
+    "composite_sha256": "223bc9b4981af8456bc7bf6094e9adb204f6ee035c7065da8ad724fb74fc2d2c"
+  },
+  {
+    "slug": "beach-piggyback",
+    "title": "Carry me home",
+    "style": "subtle",
+    "mode": "light",
+    "plugin_version": "0.5.0",
+    "source_commit": "13b2715",
+    "view": "plugin-overview",
+    "file": "beach-piggyback-plugin-overview.png",
+    "display_size": [
+      1920,
+      1200
+    ],
+    "logical_scale": 1.25,
+    "sha256": "a59476607a4716738cdca2deb124c982fe0bf65e4e0285b95c3f15ebf4fd72c5",
+    "apps": [
+      {
+        "app": "Photo Wallpapers native settings",
+        "view": "overview"
+      }
+    ],
+    "fictional_media": true,
+    "demo_network_disabled": true,
+    "analysis_jobs": 0,
+    "generator": "matugen 4.2.0",
+    "native_plugin_component_unmodified": true,
+    "source_capture": "screens/beach-piggyback-plugin-overview.png",
+    "capture_date": "2026-11-01",
+    "id": "beach-piggyback-plugin-overview-b",
+    "variant": "b",
+    "device": "studio-starlight",
+    "device_title": "Starlight \u00b7 left three-quarter",
+    "composite": "examples/beach-piggyback-plugin-overview-b-studio-starlight.jpg",
+    "device_sha256": "893f8be024fb5a2982c107daea8863a4e29a15401a98b67001ac479ebcb08a78",
+    "screen_quad": [
+      [
+        285,
+        133
+      ],
+      [
+        1036,
+        83
+      ],
+      [
+        1090,
+        550
+      ],
+      [
+        343,
+        645
+      ]
+    ],
+    "mapping": "complete uncropped capture; 2x projective bicubic then Lanczos reduction; no generative UI edits",
+    "composite_sha256": "b2dd94238aa2d4de47ff39cabd8e6a5d9e9e07aa8dd828a638de042aaa5511f6"
+  },
+  {
+    "slug": "blanket-story",
+    "title": "Just one more page",
+    "style": "subtle",
+    "mode": "dark",
+    "plugin_version": "0.5.0",
+    "source_commit": "13b2715",
+    "view": "plugin-overview",
+    "file": "blanket-story-plugin-overview.png",
+    "display_size": [
+      1920,
+      1200
+    ],
+    "logical_scale": 1.25,
+    "sha256": "cb87c076c0642793cd4041dea4b56fa04a05da7d7b582b6acfb612728ae666b2",
+    "apps": [
+      {
+        "app": "Photo Wallpapers native settings",
+        "view": "overview"
+      }
+    ],
+    "fictional_media": true,
+    "demo_network_disabled": true,
+    "analysis_jobs": 0,
+    "generator": "matugen 4.2.0",
+    "native_plugin_component_unmodified": true,
+    "source_capture": "screens/blanket-story-plugin-overview.png",
+    "capture_date": "2026-11-01",
+    "id": "blanket-story-plugin-overview-a",
+    "variant": "a",
+    "device": "studio-graphite",
+    "device_title": "Graphite \u00b7 elevated",
+    "composite": "examples/blanket-story-plugin-overview-a-studio-graphite.jpg",
+    "device_sha256": "23be8c98cf2e38ad695ddf07380c963273a67c1318c397da1688078df9eb9412",
+    "screen_quad": [
+      [
+        251,
+        122
+      ],
+      [
+        1026,
+        81
+      ],
+      [
+        1109,
+        555
+      ],
+      [
+        303,
+        633
+      ]
+    ],
+    "mapping": "complete uncropped capture; 2x projective bicubic then Lanczos reduction; no generative UI edits",
+    "composite_sha256": "5d952c727c046279f3501647fa7bf5646d482df72f4f78fe961489683a3ca20e"
+  },
+  {
+    "slug": "grandma-garden",
+    "title": "Grandma's little helper",
+    "style": "tinted",
+    "mode": "light",
+    "plugin_version": "0.5.0",
+    "source_commit": "13b2715",
+    "view": "plugin-overview",
+    "file": "grandma-garden-plugin-overview.png",
+    "display_size": [
+      1920,
+      1200
+    ],
+    "logical_scale": 1.25,
+    "sha256": "671d95096bb1c6b7fd5f041a035d4f90d8f8e70fff4aa1f20537f2c347303288",
+    "apps": [
+      {
+        "app": "Photo Wallpapers native settings",
+        "view": "overview"
+      }
+    ],
+    "fictional_media": true,
+    "demo_network_disabled": true,
+    "analysis_jobs": 0,
+    "generator": "matugen 4.2.0",
+    "native_plugin_component_unmodified": true,
+    "source_capture": "screens/grandma-garden-plugin-overview.png",
+    "capture_date": "2026-11-01",
+    "id": "grandma-garden-plugin-overview-b",
+    "variant": "b",
+    "device": "creative-desk",
+    "device_title": "Graphite \u00b7 creative desk",
+    "composite": "examples/grandma-garden-plugin-overview-b-creative-desk.jpg",
+    "device_sha256": "1bcc4c3c86a01c668c8e1fd11a69530559b8fffbd0af2b05393462eb0a717b17",
+    "screen_quad": [
+      [
+        240,
+        141
+      ],
+      [
+        938,
+        54
+      ],
+      [
+        1014,
+        484
+      ],
+      [
+        315,
+        623
+      ]
+    ],
+    "mapping": "complete uncropped capture; 2x projective bicubic then Lanczos reduction; no generative UI edits",
+    "composite_sha256": "474628d0ffee3f4893f72fbfe3d9e152c73a782e4a1d3c106b9b347055502b29"
+  },
+  {
+    "slug": "car-window",
+    "title": "The ride home",
+    "style": "tinted",
+    "mode": "dark",
+    "plugin_version": "0.5.0",
+    "source_commit": "13b2715",
+    "view": "plugin-overview",
+    "file": "car-window-plugin-overview.png",
+    "display_size": [
+      1920,
+      1200
+    ],
+    "logical_scale": 1.25,
+    "sha256": "c2b37f90dcf80cfb52e0a1894cbc175d3613532820494bbefd380c6c9f26ae74",
+    "apps": [
+      {
+        "app": "Photo Wallpapers native settings",
+        "view": "overview"
+      }
+    ],
+    "fictional_media": true,
+    "demo_network_disabled": true,
+    "analysis_jobs": 0,
+    "generator": "matugen 4.2.0",
+    "native_plugin_component_unmodified": true,
+    "source_capture": "screens/car-window-plugin-overview.png",
+    "capture_date": "2026-11-01",
+    "id": "car-window-plugin-overview-b",
+    "variant": "b",
+    "device": "studio-midnight",
+    "device_title": "Midnight \u00b7 right three-quarter",
+    "composite": "examples/car-window-plugin-overview-b-studio-midnight.jpg",
+    "device_sha256": "9e00e82492cff0a9196027890018434cbf9bf476de5229c224ef7c00f81ab8b9",
+    "screen_quad": [
+      [
+        482,
+        53
+      ],
+      [
+        1322,
+        92
+      ],
+      [
+        1280,
+        645
+      ],
+      [
+        445,
+        561
+      ]
+    ],
+    "mapping": "complete uncropped capture; 2x projective bicubic then Lanczos reduction; no generative UI edits",
+    "composite_sha256": "472702d04b23a5ff62e626c4041ad4763157f7e2dda109c56000ebdbe1722a7b"
+  },
+  {
+    "slug": "sofa-tumble",
+    "title": "Five more minutes",
+    "style": "rich",
+    "mode": "light",
+    "plugin_version": "0.5.0",
+    "source_commit": "13b2715",
+    "view": "plugin-overview",
+    "file": "sofa-tumble-plugin-overview.png",
+    "display_size": [
+      1920,
+      1200
+    ],
+    "logical_scale": 1.25,
+    "sha256": "9e0bd392a847accb80e000114be4b8fa9baea3ab2c894c8555d099cbd22a1661",
+    "apps": [
+      {
+        "app": "Photo Wallpapers native settings",
+        "view": "overview"
+      }
+    ],
+    "fictional_media": true,
+    "demo_network_disabled": true,
+    "analysis_jobs": 0,
+    "generator": "matugen 4.2.0",
+    "native_plugin_component_unmodified": true,
+    "source_capture": "screens/sofa-tumble-plugin-overview.png",
+    "capture_date": "2026-11-01",
+    "id": "sofa-tumble-plugin-overview-a",
+    "variant": "a",
+    "device": "studio-starlight",
+    "device_title": "Starlight \u00b7 left three-quarter",
+    "composite": "examples/sofa-tumble-plugin-overview-a-studio-starlight.jpg",
+    "device_sha256": "893f8be024fb5a2982c107daea8863a4e29a15401a98b67001ac479ebcb08a78",
+    "screen_quad": [
+      [
+        285,
+        133
+      ],
+      [
+        1036,
+        83
+      ],
+      [
+        1090,
+        550
+      ],
+      [
+        343,
+        645
+      ]
+    ],
+    "mapping": "complete uncropped capture; 2x projective bicubic then Lanczos reduction; no generative UI edits",
+    "composite_sha256": "def7e2ab5273a5abfb2953035f70aed2981be1582186d18f13b7b7855d3c4932"
+  },
+  {
+    "slug": "birthday-wish",
+    "title": "Make a wish",
+    "style": "rich",
+    "mode": "dark",
+    "plugin_version": "0.5.0",
+    "source_commit": "13b2715",
+    "view": "plugin-overview",
+    "file": "birthday-wish-plugin-overview.png",
+    "display_size": [
+      1920,
+      1200
+    ],
+    "logical_scale": 1.25,
+    "sha256": "f9ec7ad52fd99508a23423e4f7936cb671438c388381785a0730bc6789bb1565",
+    "apps": [
+      {
+        "app": "Photo Wallpapers native settings",
+        "view": "overview"
+      }
+    ],
+    "fictional_media": true,
+    "demo_network_disabled": true,
+    "analysis_jobs": 0,
+    "generator": "matugen 4.2.0",
+    "native_plugin_component_unmodified": true,
+    "source_capture": "screens/birthday-wish-plugin-overview.png",
+    "capture_date": "2026-11-01",
+    "id": "birthday-wish-plugin-overview-a",
+    "variant": "a",
+    "device": "studio-midnight",
+    "device_title": "Midnight \u00b7 right three-quarter",
+    "composite": "examples/birthday-wish-plugin-overview-a-studio-midnight.jpg",
+    "device_sha256": "9e00e82492cff0a9196027890018434cbf9bf476de5229c224ef7c00f81ab8b9",
+    "screen_quad": [
+      [
+        482,
+        53
+      ],
+      [
+        1322,
+        92
+      ],
+      [
+        1280,
+        645
+      ],
+      [
+        445,
+        561
+      ]
+    ],
+    "mapping": "complete uncropped capture; 2x projective bicubic then Lanczos reduction; no generative UI edits",
+    "composite_sha256": "75f65f16a0e477cc98233b060f2899d4cfa13ed45001651c8ec6f567911f8683"
+  },
+  {
+    "slug": "kitchen-flour",
+    "title": "Sunday helpers",
+    "style": "neutral",
+    "mode": "light",
+    "view": "developer",
+    "file": "kitchen-flour-developer.png",
+    "display_size": [
+      1920,
+      1200
+    ],
+    "logical_scale": 1.25,
+    "sha256": "a6bbe79c9c971216801bfb723506b8e032625da07fbec4a51194b7a32e52f65c",
+    "apps": [
+      {
+        "app": "Visual Studio Code",
+        "box": [
+          25,
+          40,
+          625,
+          740
+        ]
+      },
+      {
+        "app": "Foot",
+        "box": [
+          970,
+          650,
+          540,
+          270
+        ]
+      }
+    ],
+    "fictional_media": true,
+    "demo_network_disabled": true,
+    "analysis_jobs": 0,
+    "generator": "matugen 4.2.0",
+    "native_plugin_component_unmodified": false,
+    "id": "kitchen-flour-developer-a",
+    "variant": "a",
+    "device": "studio-silver",
+    "device_title": "Silver \u00b7 straight on",
+    "composite": "examples/kitchen-flour-developer-a-studio-silver.jpg",
+    "composite_sha256": "fcfacccabe9bcc085df3aa3cdf618af176209af7221bc10640a2dc5986dd5cb7",
+    "source_capture": "screens/kitchen-flour-developer.png",
+    "device_sha256": "5222e9b6c967820f39bf1c992116721eeb263a42a351c1a7341fd169111be5a1",
+    "screen_quad": [
+      [
+        291,
+        129
+      ],
+      [
+        1159,
+        102
+      ],
+      [
+        1185,
+        613
+      ],
+      [
+        312,
+        654
+      ]
+    ],
+    "mapping": "complete uncropped capture; 2x projective bicubic then Lanczos reduction; no generative UI edits",
+    "capture_campaign": "2026-10-30"
+  },
+  {
+    "slug": "grandma-garden",
+    "title": "Grandma's little helper",
+    "style": "tinted",
+    "mode": "light",
+    "view": "browsing",
+    "file": "grandma-garden-browsing.png",
+    "display_size": [
+      1920,
+      1200
+    ],
+    "logical_scale": 1.25,
+    "sha256": "f2c9ce7a456496829e1c0677a7b97ee9f44e94fad053f69aaecab49b79771b1d",
+    "apps": [
+      {
+        "app": "Chromium",
+        "box": [
+          25,
+          575,
+          780,
+          340
+        ]
+      },
+      {
+        "app": "Files",
+        "box": [
+          950,
+          50,
+          555,
+          650
+        ]
+      }
+    ],
+    "fictional_media": true,
+    "demo_network_disabled": true,
+    "analysis_jobs": 0,
+    "generator": "matugen 4.2.0",
+    "native_plugin_component_unmodified": false,
+    "id": "grandma-garden-browsing-b",
+    "variant": "b",
+    "device": "home-kitchen",
+    "device_title": "Silver \u00b7 morning kitchen",
+    "composite": "examples/grandma-garden-browsing-b-home-kitchen.jpg",
+    "composite_sha256": "229790540a69bdde6b87d691f2f71e0cfe7f77a60fb2cc0d48564de3b315828c",
+    "source_capture": "screens/grandma-garden-browsing.png",
+    "device_sha256": "b3e1c5ce0f69179178df0cb10a27b98c365a8cb1ad21db659ed27786b3468f61",
+    "screen_quad": [
+      [
+        251,
+        125
+      ],
+      [
+        933,
+        85
+      ],
+      [
+        994,
+        503
+      ],
+      [
+        316,
+        623
+      ]
+    ],
+    "mapping": "complete uncropped capture; 2x projective bicubic then Lanczos reduction; no generative UI edits",
+    "capture_campaign": "2026-10-30"
+  },
+  {
+    "slug": "birthday-wish",
+    "title": "Make a wish",
+    "style": "rich",
+    "mode": "dark",
+    "view": "developer",
+    "file": "birthday-wish-developer.png",
+    "display_size": [
+      1920,
+      1200
+    ],
+    "logical_scale": 1.25,
+    "sha256": "ab31c6f1aaad7bd8fa84b5ba5b3a402173f7f08f903ce0528eec570cbf51023d",
+    "apps": [
+      {
+        "app": "Visual Studio Code",
+        "box": [
+          420,
+          475,
+          1060,
+          435
+        ]
+      },
+      {
+        "app": "Foot",
+        "box": [
+          25,
+          670,
+          365,
+          240
+        ]
+      }
+    ],
+    "fictional_media": true,
+    "demo_network_disabled": true,
+    "analysis_jobs": 0,
+    "generator": "matugen 4.2.0",
+    "native_plugin_component_unmodified": false,
+    "id": "birthday-wish-developer-b",
+    "variant": "b",
+    "device": "studio-midnight",
+    "device_title": "Midnight \u00b7 right three-quarter",
+    "composite": "examples/birthday-wish-developer-b-studio-midnight.jpg",
+    "composite_sha256": "fb918e6af601ec151e9972a54487d97c8357de7e8fabcd348327ac3be5c2cfb1",
+    "source_capture": "screens/birthday-wish-developer.png",
+    "device_sha256": "9e00e82492cff0a9196027890018434cbf9bf476de5229c224ef7c00f81ab8b9",
+    "screen_quad": [
+      [
+        482,
+        53
+      ],
+      [
+        1322,
+        92
+      ],
+      [
+        1280,
+        645
+      ],
+      [
+        445,
+        561
+      ]
+    ],
+    "mapping": "complete uncropped capture; 2x projective bicubic then Lanczos reduction; no generative UI edits",
+    "capture_campaign": "2026-10-30"
+  },
+  {
+    "slug": "car-window",
+    "title": "The ride home",
+    "style": "tinted",
+    "mode": "dark",
+    "view": "browsing",
+    "file": "car-window-browsing.png",
+    "display_size": [
+      1920,
+      1200
+    ],
+    "logical_scale": 1.25,
+    "sha256": "3cd7465fc6e8e05ad2128165c3eb3ea9d384e33b30b6f2dda8b2699b251790c6",
+    "apps": [
+      {
+        "app": "Chromium",
+        "box": [
+          25,
+          485,
+          815,
+          430
+        ]
+      },
+      {
+        "app": "Files",
+        "box": [
+          905,
+          35,
+          605,
+          650
+        ]
+      }
+    ],
+    "fictional_media": true,
+    "demo_network_disabled": true,
+    "analysis_jobs": 0,
+    "generator": "matugen 4.2.0",
+    "native_plugin_component_unmodified": false,
+    "id": "car-window-browsing-a",
+    "variant": "a",
+    "device": "studio-graphite",
+    "device_title": "Graphite \u00b7 elevated",
+    "composite": "examples/car-window-browsing-a-studio-graphite.jpg",
+    "composite_sha256": "85152d0df6cb49c473e7db3c80d2658b652e39bc6e5416f2152b20fa0dad2ad7",
+    "source_capture": "screens/car-window-browsing.png",
+    "device_sha256": "23be8c98cf2e38ad695ddf07380c963273a67c1318c397da1688078df9eb9412",
+    "screen_quad": [
+      [
+        251,
+        122
+      ],
+      [
+        1026,
+        81
+      ],
+      [
+        1109,
+        555
+      ],
+      [
+        303,
+        633
+      ]
+    ],
+    "mapping": "complete uncropped capture; 2x projective bicubic then Lanczos reduction; no generative UI edits",
+    "capture_campaign": "2026-10-30"
+  }
+]

@@ -1,0 +1,884 @@
+[
+  {
+    "slug": "beach-piggyback",
+    "title": "Carry me home",
+    "style": "subtle",
+    "mode": "light",
+    "view": "desktop",
+    "file": "beach-piggyback-desktop.png",
+    "display_size": [
+      1920,
+      1200
+    ],
+    "logical_scale": 1.25,
+    "sha256": "6598ccebb848ce2af27af708c147ae5702673beebafcd1de9167c2a81c0ddb2e",
+    "apps": [],
+    "fictional_media": true,
+    "demo_network_disabled": true,
+    "analysis_jobs": 0,
+    "generator": "matugen 4.2.0",
+    "native_plugin_component_unmodified": false,
+    "source_capture": "screens/beach-piggyback-desktop.png",
+    "capture_campaign": "2026-10-30"
+  },
+  {
+    "slug": "kitchen-flour",
+    "title": "Sunday helpers",
+    "style": "neutral",
+    "mode": "light",
+    "view": "developer",
+    "file": "kitchen-flour-developer.png",
+    "display_size": [
+      1920,
+      1200
+    ],
+    "logical_scale": 1.25,
+    "sha256": "a6bbe79c9c971216801bfb723506b8e032625da07fbec4a51194b7a32e52f65c",
+    "apps": [
+      {
+        "app": "Visual Studio Code",
+        "box": [
+          25,
+          40,
+          625,
+          740
+        ]
+      },
+      {
+        "app": "Foot",
+        "box": [
+          970,
+          650,
+          540,
+          270
+        ]
+      }
+    ],
+    "fictional_media": true,
+    "demo_network_disabled": true,
+    "analysis_jobs": 0,
+    "generator": "matugen 4.2.0",
+    "native_plugin_component_unmodified": false,
+    "source_capture": "screens/kitchen-flour-developer.png",
+    "capture_campaign": "2026-10-30"
+  },
+  {
+    "slug": "grandma-garden",
+    "title": "Grandma's little helper",
+    "style": "tinted",
+    "mode": "light",
+    "view": "browsing",
+    "file": "grandma-garden-browsing.png",
+    "display_size": [
+      1920,
+      1200
+    ],
+    "logical_scale": 1.25,
+    "sha256": "f2c9ce7a456496829e1c0677a7b97ee9f44e94fad053f69aaecab49b79771b1d",
+    "apps": [
+      {
+        "app": "Chromium",
+        "box": [
+          25,
+          575,
+          780,
+          340
+        ]
+      },
+      {
+        "app": "Files",
+        "box": [
+          950,
+          50,
+          555,
+          650
+        ]
+      }
+    ],
+    "fictional_media": true,
+    "demo_network_disabled": true,
+    "analysis_jobs": 0,
+    "generator": "matugen 4.2.0",
+    "native_plugin_component_unmodified": false,
+    "source_capture": "screens/grandma-garden-browsing.png",
+    "capture_campaign": "2026-10-30"
+  },
+  {
+    "slug": "birthday-wish",
+    "title": "Make a wish",
+    "style": "rich",
+    "mode": "dark",
+    "view": "developer",
+    "file": "birthday-wish-developer.png",
+    "display_size": [
+      1920,
+      1200
+    ],
+    "logical_scale": 1.25,
+    "sha256": "ab31c6f1aaad7bd8fa84b5ba5b3a402173f7f08f903ce0528eec570cbf51023d",
+    "apps": [
+      {
+        "app": "Visual Studio Code",
+        "box": [
+          420,
+          475,
+          1060,
+          435
+        ]
+      },
+      {
+        "app": "Foot",
+        "box": [
+          25,
+          670,
+          365,
+          240
+        ]
+      }
+    ],
+    "fictional_media": true,
+    "demo_network_disabled": true,
+    "analysis_jobs": 0,
+    "generator": "matugen 4.2.0",
+    "native_plugin_component_unmodified": false,
+    "source_capture": "screens/birthday-wish-developer.png",
+    "capture_campaign": "2026-10-30"
+  },
+  {
+    "slug": "car-window",
+    "title": "The ride home",
+    "style": "tinted",
+    "mode": "dark",
+    "view": "browsing",
+    "file": "car-window-browsing.png",
+    "display_size": [
+      1920,
+      1200
+    ],
+    "logical_scale": 1.25,
+    "sha256": "3cd7465fc6e8e05ad2128165c3eb3ea9d384e33b30b6f2dda8b2699b251790c6",
+    "apps": [
+      {
+        "app": "Chromium",
+        "box": [
+          25,
+          485,
+          815,
+          430
+        ]
+      },
+      {
+        "app": "Files",
+        "box": [
+          905,
+          35,
+          605,
+          650
+        ]
+      }
+    ],
+    "fictional_media": true,
+    "demo_network_disabled": true,
+    "analysis_jobs": 0,
+    "generator": "matugen 4.2.0",
+    "native_plugin_component_unmodified": false,
+    "source_capture": "screens/car-window-browsing.png",
+    "capture_campaign": "2026-10-30"
+  },
+  {
+    "slug": "livingroom-dance",
+    "title": "Their favourite song",
+    "style": "neutral",
+    "mode": "dark",
+    "plugin_version": "0.5.0",
+    "source_commit": "13b2715",
+    "view": "plugin-overview",
+    "file": "livingroom-dance-plugin-overview.png",
+    "display_size": [
+      1920,
+      1200
+    ],
+    "logical_scale": 1.25,
+    "sha256": "e676044bfb318c2d9863ba807e7dcd53e02afb9538fc235609080e3647217ada",
+    "apps": [
+      {
+        "app": "Photo Wallpapers native settings",
+        "view": "overview"
+      }
+    ],
+    "fictional_media": true,
+    "demo_network_disabled": true,
+    "analysis_jobs": 0,
+    "generator": "matugen 4.2.0",
+    "native_plugin_component_unmodified": true,
+    "source_capture": "screens/livingroom-dance-plugin-overview.png",
+    "capture_date": "2026-11-01"
+  },
+  {
+    "slug": "livingroom-dance",
+    "title": "Their favourite song",
+    "style": "neutral",
+    "mode": "dark",
+    "plugin_version": "0.5.0",
+    "source_commit": "13b2715",
+    "view": "plugin-controls",
+    "file": "livingroom-dance-plugin-controls.png",
+    "display_size": [
+      1920,
+      1200
+    ],
+    "logical_scale": 1.25,
+    "sha256": "94ad4cf1b2a4b5c29f419b8858c0a3b728b85de2be87ae92d27f5cf4371c1a57",
+    "apps": [
+      {
+        "app": "Photo Wallpapers native settings",
+        "view": "controls"
+      }
+    ],
+    "fictional_media": true,
+    "demo_network_disabled": true,
+    "analysis_jobs": 0,
+    "generator": "matugen 4.2.0",
+    "native_plugin_component_unmodified": true,
+    "source_capture": "screens/livingroom-dance-plugin-controls.png",
+    "capture_date": "2026-11-01"
+  },
+  {
+    "slug": "livingroom-dance",
+    "title": "Their favourite song",
+    "style": "neutral",
+    "mode": "dark",
+    "plugin_version": "0.5.0",
+    "source_commit": "13b2715",
+    "view": "plugin-privacy",
+    "file": "livingroom-dance-plugin-privacy.png",
+    "display_size": [
+      1920,
+      1200
+    ],
+    "logical_scale": 1.25,
+    "sha256": "a0419e998a025e305df70524b2aa641da422f135fa104b805150c72c449bb23c",
+    "apps": [
+      {
+        "app": "Photo Wallpapers native settings",
+        "view": "privacy"
+      }
+    ],
+    "fictional_media": true,
+    "demo_network_disabled": true,
+    "analysis_jobs": 0,
+    "generator": "matugen 4.2.0",
+    "native_plugin_component_unmodified": true,
+    "source_capture": "screens/livingroom-dance-plugin-privacy.png",
+    "capture_date": "2026-11-01"
+  },
+  {
+    "slug": "kitchen-flour",
+    "title": "Sunday helpers",
+    "style": "neutral",
+    "mode": "light",
+    "plugin_version": "0.5.0",
+    "source_commit": "13b2715",
+    "view": "plugin-overview",
+    "file": "kitchen-flour-plugin-overview.png",
+    "display_size": [
+      1920,
+      1200
+    ],
+    "logical_scale": 1.25,
+    "sha256": "559712d77cd4476f1955a2f5fcce08638ab443ad9886d54ccf3c42a46dbe0092",
+    "apps": [
+      {
+        "app": "Photo Wallpapers native settings",
+        "view": "overview"
+      }
+    ],
+    "fictional_media": true,
+    "demo_network_disabled": true,
+    "analysis_jobs": 0,
+    "generator": "matugen 4.2.0",
+    "native_plugin_component_unmodified": true,
+    "source_capture": "screens/kitchen-flour-plugin-overview.png",
+    "capture_date": "2026-11-01"
+  },
+  {
+    "slug": "kitchen-flour",
+    "title": "Sunday helpers",
+    "style": "neutral",
+    "mode": "light",
+    "plugin_version": "0.5.0",
+    "source_commit": "13b2715",
+    "view": "plugin-controls",
+    "file": "kitchen-flour-plugin-controls.png",
+    "display_size": [
+      1920,
+      1200
+    ],
+    "logical_scale": 1.25,
+    "sha256": "a6df2c22ee9e28b251716acb8f3019c22585333fcbe28929b5316afdc3e683bd",
+    "apps": [
+      {
+        "app": "Photo Wallpapers native settings",
+        "view": "controls"
+      }
+    ],
+    "fictional_media": true,
+    "demo_network_disabled": true,
+    "analysis_jobs": 0,
+    "generator": "matugen 4.2.0",
+    "native_plugin_component_unmodified": true,
+    "source_capture": "screens/kitchen-flour-plugin-controls.png",
+    "capture_date": "2026-11-01"
+  },
+  {
+    "slug": "kitchen-flour",
+    "title": "Sunday helpers",
+    "style": "neutral",
+    "mode": "light",
+    "plugin_version": "0.5.0",
+    "source_commit": "13b2715",
+    "view": "plugin-privacy",
+    "file": "kitchen-flour-plugin-privacy.png",
+    "display_size": [
+      1920,
+      1200
+    ],
+    "logical_scale": 1.25,
+    "sha256": "ae5521c3b22f0d6f9d6521045e0881b93ff3f42096a2c2cd166df231c75a996a",
+    "apps": [
+      {
+        "app": "Photo Wallpapers native settings",
+        "view": "privacy"
+      }
+    ],
+    "fictional_media": true,
+    "demo_network_disabled": true,
+    "analysis_jobs": 0,
+    "generator": "matugen 4.2.0",
+    "native_plugin_component_unmodified": true,
+    "source_capture": "screens/kitchen-flour-plugin-privacy.png",
+    "capture_date": "2026-11-01"
+  },
+  {
+    "slug": "birthday-wish",
+    "title": "Make a wish",
+    "style": "rich",
+    "mode": "dark",
+    "plugin_version": "0.5.0",
+    "source_commit": "13b2715",
+    "view": "plugin-overview",
+    "file": "birthday-wish-plugin-overview.png",
+    "display_size": [
+      1920,
+      1200
+    ],
+    "logical_scale": 1.25,
+    "sha256": "f9ec7ad52fd99508a23423e4f7936cb671438c388381785a0730bc6789bb1565",
+    "apps": [
+      {
+        "app": "Photo Wallpapers native settings",
+        "view": "overview"
+      }
+    ],
+    "fictional_media": true,
+    "demo_network_disabled": true,
+    "analysis_jobs": 0,
+    "generator": "matugen 4.2.0",
+    "native_plugin_component_unmodified": true,
+    "source_capture": "screens/birthday-wish-plugin-overview.png",
+    "capture_date": "2026-11-01"
+  },
+  {
+    "slug": "birthday-wish",
+    "title": "Make a wish",
+    "style": "rich",
+    "mode": "dark",
+    "plugin_version": "0.5.0",
+    "source_commit": "13b2715",
+    "view": "plugin-controls",
+    "file": "birthday-wish-plugin-controls.png",
+    "display_size": [
+      1920,
+      1200
+    ],
+    "logical_scale": 1.25,
+    "sha256": "91113444e69fa1747a602759f9baf9676e8d9047adc3f0a5c8d85945a1999821",
+    "apps": [
+      {
+        "app": "Photo Wallpapers native settings",
+        "view": "controls"
+      }
+    ],
+    "fictional_media": true,
+    "demo_network_disabled": true,
+    "analysis_jobs": 0,
+    "generator": "matugen 4.2.0",
+    "native_plugin_component_unmodified": true,
+    "source_capture": "screens/birthday-wish-plugin-controls.png",
+    "capture_date": "2026-11-01"
+  },
+  {
+    "slug": "birthday-wish",
+    "title": "Make a wish",
+    "style": "rich",
+    "mode": "dark",
+    "plugin_version": "0.5.0",
+    "source_commit": "13b2715",
+    "view": "plugin-privacy",
+    "file": "birthday-wish-plugin-privacy.png",
+    "display_size": [
+      1920,
+      1200
+    ],
+    "logical_scale": 1.25,
+    "sha256": "e0e8ebeca93c01740c5ed5c01a8d1412fcbaa60a765f3695b686bb9e0c1f2ba9",
+    "apps": [
+      {
+        "app": "Photo Wallpapers native settings",
+        "view": "privacy"
+      }
+    ],
+    "fictional_media": true,
+    "demo_network_disabled": true,
+    "analysis_jobs": 0,
+    "generator": "matugen 4.2.0",
+    "native_plugin_component_unmodified": true,
+    "source_capture": "screens/birthday-wish-plugin-privacy.png",
+    "capture_date": "2026-11-01"
+  },
+  {
+    "slug": "sofa-tumble",
+    "title": "Five more minutes",
+    "style": "rich",
+    "mode": "light",
+    "plugin_version": "0.5.0",
+    "source_commit": "13b2715",
+    "view": "plugin-overview",
+    "file": "sofa-tumble-plugin-overview.png",
+    "display_size": [
+      1920,
+      1200
+    ],
+    "logical_scale": 1.25,
+    "sha256": "9e0bd392a847accb80e000114be4b8fa9baea3ab2c894c8555d099cbd22a1661",
+    "apps": [
+      {
+        "app": "Photo Wallpapers native settings",
+        "view": "overview"
+      }
+    ],
+    "fictional_media": true,
+    "demo_network_disabled": true,
+    "analysis_jobs": 0,
+    "generator": "matugen 4.2.0",
+    "native_plugin_component_unmodified": true,
+    "source_capture": "screens/sofa-tumble-plugin-overview.png",
+    "capture_date": "2026-11-01"
+  },
+  {
+    "slug": "sofa-tumble",
+    "title": "Five more minutes",
+    "style": "rich",
+    "mode": "light",
+    "plugin_version": "0.5.0",
+    "source_commit": "13b2715",
+    "view": "plugin-controls",
+    "file": "sofa-tumble-plugin-controls.png",
+    "display_size": [
+      1920,
+      1200
+    ],
+    "logical_scale": 1.25,
+    "sha256": "332ccf8f78de1d571c7fab35fcfe84c88776cd5c6b7dad8aec12c5b7c1d505e3",
+    "apps": [
+      {
+        "app": "Photo Wallpapers native settings",
+        "view": "controls"
+      }
+    ],
+    "fictional_media": true,
+    "demo_network_disabled": true,
+    "analysis_jobs": 0,
+    "generator": "matugen 4.2.0",
+    "native_plugin_component_unmodified": true,
+    "source_capture": "screens/sofa-tumble-plugin-controls.png",
+    "capture_date": "2026-11-01"
+  },
+  {
+    "slug": "sofa-tumble",
+    "title": "Five more minutes",
+    "style": "rich",
+    "mode": "light",
+    "plugin_version": "0.5.0",
+    "source_commit": "13b2715",
+    "view": "plugin-privacy",
+    "file": "sofa-tumble-plugin-privacy.png",
+    "display_size": [
+      1920,
+      1200
+    ],
+    "logical_scale": 1.25,
+    "sha256": "cfc8bb736cad5040e297e1afe0fa999eaf5cc54cb7487352150429398c54e741",
+    "apps": [
+      {
+        "app": "Photo Wallpapers native settings",
+        "view": "privacy"
+      }
+    ],
+    "fictional_media": true,
+    "demo_network_disabled": true,
+    "analysis_jobs": 0,
+    "generator": "matugen 4.2.0",
+    "native_plugin_component_unmodified": true,
+    "source_capture": "screens/sofa-tumble-plugin-privacy.png",
+    "capture_date": "2026-11-01"
+  },
+  {
+    "slug": "blanket-story",
+    "title": "Just one more page",
+    "style": "subtle",
+    "mode": "dark",
+    "plugin_version": "0.5.0",
+    "source_commit": "13b2715",
+    "view": "plugin-overview",
+    "file": "blanket-story-plugin-overview.png",
+    "display_size": [
+      1920,
+      1200
+    ],
+    "logical_scale": 1.25,
+    "sha256": "cb87c076c0642793cd4041dea4b56fa04a05da7d7b582b6acfb612728ae666b2",
+    "apps": [
+      {
+        "app": "Photo Wallpapers native settings",
+        "view": "overview"
+      }
+    ],
+    "fictional_media": true,
+    "demo_network_disabled": true,
+    "analysis_jobs": 0,
+    "generator": "matugen 4.2.0",
+    "native_plugin_component_unmodified": true,
+    "source_capture": "screens/blanket-story-plugin-overview.png",
+    "capture_date": "2026-11-01"
+  },
+  {
+    "slug": "blanket-story",
+    "title": "Just one more page",
+    "style": "subtle",
+    "mode": "dark",
+    "plugin_version": "0.5.0",
+    "source_commit": "13b2715",
+    "view": "plugin-controls",
+    "file": "blanket-story-plugin-controls.png",
+    "display_size": [
+      1920,
+      1200
+    ],
+    "logical_scale": 1.25,
+    "sha256": "3b91ecb82692772f5960218dfaa08f56753394fc7a5fc777a9038aa0efd9e3eb",
+    "apps": [
+      {
+        "app": "Photo Wallpapers native settings",
+        "view": "controls"
+      }
+    ],
+    "fictional_media": true,
+    "demo_network_disabled": true,
+    "analysis_jobs": 0,
+    "generator": "matugen 4.2.0",
+    "native_plugin_component_unmodified": true,
+    "source_capture": "screens/blanket-story-plugin-controls.png",
+    "capture_date": "2026-11-01"
+  },
+  {
+    "slug": "blanket-story",
+    "title": "Just one more page",
+    "style": "subtle",
+    "mode": "dark",
+    "plugin_version": "0.5.0",
+    "source_commit": "13b2715",
+    "view": "plugin-privacy",
+    "file": "blanket-story-plugin-privacy.png",
+    "display_size": [
+      1920,
+      1200
+    ],
+    "logical_scale": 1.25,
+    "sha256": "a879defbf8c1e6002cb1ae96d4097dfbece7f045024ee3dfc97e0202138059a5",
+    "apps": [
+      {
+        "app": "Photo Wallpapers native settings",
+        "view": "privacy"
+      }
+    ],
+    "fictional_media": true,
+    "demo_network_disabled": true,
+    "analysis_jobs": 0,
+    "generator": "matugen 4.2.0",
+    "native_plugin_component_unmodified": true,
+    "source_capture": "screens/blanket-story-plugin-privacy.png",
+    "capture_date": "2026-11-01"
+  },
+  {
+    "slug": "beach-piggyback",
+    "title": "Carry me home",
+    "style": "subtle",
+    "mode": "light",
+    "plugin_version": "0.5.0",
+    "source_commit": "13b2715",
+    "view": "plugin-overview",
+    "file": "beach-piggyback-plugin-overview.png",
+    "display_size": [
+      1920,
+      1200
+    ],
+    "logical_scale": 1.25,
+    "sha256": "a59476607a4716738cdca2deb124c982fe0bf65e4e0285b95c3f15ebf4fd72c5",
+    "apps": [
+      {
+        "app": "Photo Wallpapers native settings",
+        "view": "overview"
+      }
+    ],
+    "fictional_media": true,
+    "demo_network_disabled": true,
+    "analysis_jobs": 0,
+    "generator": "matugen 4.2.0",
+    "native_plugin_component_unmodified": true,
+    "source_capture": "screens/beach-piggyback-plugin-overview.png",
+    "capture_date": "2026-11-01"
+  },
+  {
+    "slug": "beach-piggyback",
+    "title": "Carry me home",
+    "style": "subtle",
+    "mode": "light",
+    "plugin_version": "0.5.0",
+    "source_commit": "13b2715",
+    "view": "plugin-controls",
+    "file": "beach-piggyback-plugin-controls.png",
+    "display_size": [
+      1920,
+      1200
+    ],
+    "logical_scale": 1.25,
+    "sha256": "d5ac120404f135008f44ecd5f61337bb8c34efad0437aeff9ab2fad859dd65aa",
+    "apps": [
+      {
+        "app": "Photo Wallpapers native settings",
+        "view": "controls"
+      }
+    ],
+    "fictional_media": true,
+    "demo_network_disabled": true,
+    "analysis_jobs": 0,
+    "generator": "matugen 4.2.0",
+    "native_plugin_component_unmodified": true,
+    "source_capture": "screens/beach-piggyback-plugin-controls.png",
+    "capture_date": "2026-11-01"
+  },
+  {
+    "slug": "beach-piggyback",
+    "title": "Carry me home",
+    "style": "subtle",
+    "mode": "light",
+    "plugin_version": "0.5.0",
+    "source_commit": "13b2715",
+    "view": "plugin-privacy",
+    "file": "beach-piggyback-plugin-privacy.png",
+    "display_size": [
+      1920,
+      1200
+    ],
+    "logical_scale": 1.25,
+    "sha256": "bf4fe4b7ca770b4a40066436ca5d350dbaf770ce41d890e61b9a719178b7452e",
+    "apps": [
+      {
+        "app": "Photo Wallpapers native settings",
+        "view": "privacy"
+      }
+    ],
+    "fictional_media": true,
+    "demo_network_disabled": true,
+    "analysis_jobs": 0,
+    "generator": "matugen 4.2.0",
+    "native_plugin_component_unmodified": true,
+    "source_capture": "screens/beach-piggyback-plugin-privacy.png",
+    "capture_date": "2026-11-01"
+  },
+  {
+    "slug": "car-window",
+    "title": "The ride home",
+    "style": "tinted",
+    "mode": "dark",
+    "plugin_version": "0.5.0",
+    "source_commit": "13b2715",
+    "view": "plugin-overview",
+    "file": "car-window-plugin-overview.png",
+    "display_size": [
+      1920,
+      1200
+    ],
+    "logical_scale": 1.25,
+    "sha256": "c2b37f90dcf80cfb52e0a1894cbc175d3613532820494bbefd380c6c9f26ae74",
+    "apps": [
+      {
+        "app": "Photo Wallpapers native settings",
+        "view": "overview"
+      }
+    ],
+    "fictional_media": true,
+    "demo_network_disabled": true,
+    "analysis_jobs": 0,
+    "generator": "matugen 4.2.0",
+    "native_plugin_component_unmodified": true,
+    "source_capture": "screens/car-window-plugin-overview.png",
+    "capture_date": "2026-11-01"
+  },
+  {
+    "slug": "car-window",
+    "title": "The ride home",
+    "style": "tinted",
+    "mode": "dark",
+    "plugin_version": "0.5.0",
+    "source_commit": "13b2715",
+    "view": "plugin-controls",
+    "file": "car-window-plugin-controls.png",
+    "display_size": [
+      1920,
+      1200
+    ],
+    "logical_scale": 1.25,
+    "sha256": "fcbd81021c4464408e337e5c676ca46896fa3f9f44e7b52de9499cd690a6c5d3",
+    "apps": [
+      {
+        "app": "Photo Wallpapers native settings",
+        "view": "controls"
+      }
+    ],
+    "fictional_media": true,
+    "demo_network_disabled": true,
+    "analysis_jobs": 0,
+    "generator": "matugen 4.2.0",
+    "native_plugin_component_unmodified": true,
+    "source_capture": "screens/car-window-plugin-controls.png",
+    "capture_date": "2026-11-01"
+  },
+  {
+    "slug": "car-window",
+    "title": "The ride home",
+    "style": "tinted",
+    "mode": "dark",
+    "plugin_version": "0.5.0",
+    "source_commit": "13b2715",
+    "view": "plugin-privacy",
+    "file": "car-window-plugin-privacy.png",
+    "display_size": [
+      1920,
+      1200
+    ],
+    "logical_scale": 1.25,
+    "sha256": "f4b957e65467e8241d6363fec686ff64c3d39dcaf3b41967b39c8e57c3236f17",
+    "apps": [
+      {
+        "app": "Photo Wallpapers native settings",
+        "view": "privacy"
+      }
+    ],
+    "fictional_media": true,
+    "demo_network_disabled": true,
+    "analysis_jobs": 0,
+    "generator": "matugen 4.2.0",
+    "native_plugin_component_unmodified": true,
+    "source_capture": "screens/car-window-plugin-privacy.png",
+    "capture_date": "2026-11-01"
+  },
+  {
+    "slug": "grandma-garden",
+    "title": "Grandma's little helper",
+    "style": "tinted",
+    "mode": "light",
+    "plugin_version": "0.5.0",
+    "source_commit": "13b2715",
+    "view": "plugin-overview",
+    "file": "grandma-garden-plugin-overview.png",
+    "display_size": [
+      1920,
+      1200
+    ],
+    "logical_scale": 1.25,
+    "sha256": "671d95096bb1c6b7fd5f041a035d4f90d8f8e70fff4aa1f20537f2c347303288",
+    "apps": [
+      {
+        "app": "Photo Wallpapers native settings",
+        "view": "overview"
+      }
+    ],
+    "fictional_media": true,
+    "demo_network_disabled": true,
+    "analysis_jobs": 0,
+    "generator": "matugen 4.2.0",
+    "native_plugin_component_unmodified": true,
+    "source_capture": "screens/grandma-garden-plugin-overview.png",
+    "capture_date": "2026-11-01"
+  },
+  {
+    "slug": "grandma-garden",
+    "title": "Grandma's little helper",
+    "style": "tinted",
+    "mode": "light",
+    "plugin_version": "0.5.0",
+    "source_commit": "13b2715",
+    "view": "plugin-controls",
+    "file": "grandma-garden-plugin-controls.png",
+    "display_size": [
+      1920,
+      1200
+    ],
+    "logical_scale": 1.25,
+    "sha256": "cda943e85b47f1da38aa4f44e24e0e51a4931c9ffa8868006cde44d420cadbb8",
+    "apps": [
+      {
+        "app": "Photo Wallpapers native settings",
+        "view": "controls"
+      }
+    ],
+    "fictional_media": true,
+    "demo_network_disabled": true,
+    "analysis_jobs": 0,
+    "generator": "matugen 4.2.0",
+    "native_plugin_component_unmodified": true,
+    "source_capture": "screens/grandma-garden-plugin-controls.png",
+    "capture_date": "2026-11-01"
+  },
+  {
+    "slug": "grandma-garden",
+    "title": "Grandma's little helper",
+    "style": "tinted",
+    "mode": "light",
+    "plugin_version": "0.5.0",
+    "source_commit": "13b2715",
+    "view": "plugin-privacy",
+    "file": "grandma-garden-plugin-privacy.png",
+    "display_size": [
+      1920,
+      1200
+    ],
+    "logical_scale": 1.25,
+    "sha256": "7f08028d072e3f5b3fc2a557a1d859c30fdf055fe6dbb01caf02a9ce4cdcc87a",
+    "apps": [
+      {
+        "app": "Photo Wallpapers native settings",
+        "view": "privacy"
+      }
+    ],
+    "fictional_media": true,
+    "demo_network_disabled": true,
+    "analysis_jobs": 0,
+    "generator": "matugen 4.2.0",
+    "native_plugin_component_unmodified": true,
+    "source_capture": "screens/grandma-garden-plugin-privacy.png",
+    "capture_date": "2026-11-01"
+  }
+]
